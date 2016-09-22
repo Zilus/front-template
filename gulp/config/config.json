@@ -1,0 +1,57 @@
+{
+  "projects": {
+    "cotizador": {
+      "js": [
+        "./bower_components/tck-bootstrap/dist/js/scripts.js",
+        "./source/assets/javascripts/form.js",
+        "./source/assets/javascripts/project/**/*.js"
+      ],
+      "css": [
+        "./source/assets/stylesheets/style.scss"
+      ],
+      "cssignore": [
+        "./bower_components/tck-bootstrap/dist/css/tck_bootstrap.css",
+        "./source/assets/stylesheets/bootstrap-theme.scss"
+      ],
+      "html": [
+        "./source/templates/project/*.html"
+      ],
+      "img": [
+        "./source/assets/images/common/**/*.{jpg,png,gif,jpeg}",
+        "./source/assets/images/project/**/*"
+      ],
+      "fonts": [
+        "./source/assets/fonts/project/**/*"
+      ],
+      "data":      "./data/example.json",
+      "build":     "./dist/project/",
+      "deploydir":     "./dist/project/**/*"
+    }
+  },
+  "deploy_method_options": "ftp, sftp",
+  "deploy_method": "ftp",
+  "deploy": {
+    "local":     "./dist/**/*",
+    "remote": "/home/user/public_html/project/",
+    "remoteTmp": "/tmp/DFe4siED2D",
+    "remoteScript": "/home/user/",
+    "remoteFTP": "/"
+  },
+  "sshConfig": {
+    "host": "192.168.1.1",
+    "port": 22,
+    "username": "user",
+    "passphrase": "MyKey",
+    "privateKey": "/Users/user/.ssh/id_rsa"
+  },
+  "ftpConfig": {
+    "host": "192.168.1.1",
+    "username": "user@ftpserver.com",
+    "password": "MyPassword"
+  },
+  "alt-require": true,
+  "bootstrap": {
+    "lint": true,
+    "theme": true
+  }
+}

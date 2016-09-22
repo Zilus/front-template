@@ -1,0 +1,80 @@
+<legend>
+  ¿Qué tipo de créditos has tenido antes?
+  <br />
+  <small class="text-muted">Selecciona uno o varias de las opciones presentadas</small>
+</legend>
+
+<div class="row">
+  <div class="col-xs-4 text-center">
+    <div class="panel panel-bancomer" id="tarjeta">
+      <div class="panel-body">
+        <span class="glyphmap-tarjeta"></span>
+        <br />
+        ¿Tienes alguna Tarjeta de crédito vigente?
+        <input type="checkbox" name="tarjeta" id="tarjeta-input" />
+      </div>
+    </div>
+    <br />
+  </div>
+  <div class="col-xs-4 text-center">
+    <div class="panel panel-bancomer" id="hipoteca">
+      <div class="panel-body">
+        <span class="glyphmap-casaporcentaje"></span>
+        <br />
+        ¿Cuentas con algún crédito hipotecario?
+        <input type="checkbox" name="hipoteca" id="hipoteca-input" />
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-4 text-center">
+    <div class="panel panel-bancomer" id="auto">
+      <div class="panel-body">
+        <span class="glyphmap-auto"></span>
+        <br />
+        ¿Has ejercido en los últimos dos años un crédito automotriz?
+        <input type="checkbox" name="auto" id="auto-input" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-4 text-center">
+    <div class="btn-group btn-toggle">
+      <button type="button" class="btn btn-default" id="tarjeta-si">Sí</button>
+      <button type="button" class="btn btn-primary-shadow" id="tarjeta-no">No</button>
+    </div>
+  </div>
+  <div class="col-xs-4 text-center">
+    <div class="btn-group btn-toggle">
+      <button type="button" class="btn btn-default" id="hipoteca-si">Sí</button>
+      <button type="button" class="btn btn-primary-shadow" id="hipoteca-no">No</button>
+    </div>
+  </div>
+  <div class="col-xs-4 text-center">
+    <div class="btn-group btn-toggle">
+      <button type="button" class="btn btn-default" id="auto-si">Sí</button>
+      <button type="button" class="btn btn-primary-shadow" id="auto-no">No</button>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-3">
+    <div class="form-group">
+      <label for="codigo">Últimos 4 dígitos de tu tarjeta <span class="glyphmap24-interrogacion" data-toggle="tooltip" data-placement="right" title="Aquí va mas información"></span></label>
+      <input class="form-control form-control-gray" id="codigo" name="codigo" placeholder="Ej. 1234" type="text" required="required" pattern="^[_A-z0-9]{1,}$" data-error="Olvidaste llenar este campo" data-toggle="tooltip" data-placement="bottom" />
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-2">
+    <br />
+    <button class="btn btn-default btn-block btn-lg previous" type="button">Atrás</button>
+  </div>
+  <div class="col-xs-2 col-xs-offset-8">
+    <br />
+    <button class="btn btn-info btn-block btn-lg next" type="button">Continuar</button>
+  </div>
+</div>

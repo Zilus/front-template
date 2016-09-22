@@ -1,0 +1,195 @@
+/*!
+* BBVA Bancomer
+* Copyright 2016-present The Cocktail América S.A. de C.V.
+*
+* Style customize
+*
+*/
+
+#precalificador {
+  .panel {
+    min-height: 200px;
+
+    .panel-body {
+      font-size: $font-size-medium;
+      padding: 20px;
+
+      input[type=checkbox] { display: none;}
+    }
+  }
+
+  .btn-toggle { margin-bottom: 50px; }
+
+  form {
+    fieldset:nth-child(n+2) {
+      display: none;
+    }
+  }
+
+  .titulo-con-padding {
+    color: $azul;
+    padding: 50px 180px;
+  }
+}
+
+.panel-body {
+  .mediumgray-bg {
+    background-color: $gray-f3;
+    margin: -15px;
+    padding: 15px;
+    border-radius: $panel-border-radius $panel-border-radius 0 0;
+    margin-bottom: 20px;
+  }
+}
+
+#progressbar {
+	overflow: hidden;
+  text-align: center;
+
+  li {
+  	list-style-type: none;
+  	color: $gray-tabs;
+  	font-size: 11px;
+  	width: 33.33%;
+  	float: left;
+  	position: relative;
+
+    &:before {
+    	width: 20px;
+    	line-height: 20px;
+    	display: block;
+    	font-size: 10px;
+    	color: #333;
+    	background: white;
+    	border-radius: 3px;
+    	margin: 0 auto 5px auto;
+    }
+
+    &:after {
+    	content: '';
+    	width: 70%;
+    	height: 2px;
+    	background: $gray-light;
+    	position: absolute;
+    	left: -35%;
+    	top: 35%;
+    }
+
+    &:first-child:after {
+    	content: none;
+    }
+
+    &.active {
+      color: $azul3;
+      &:before, &:after {
+        background: $azul3;
+      	color: white;
+      }
+
+      [class^="glyphmap"] {
+        @include grayscale(0);
+      }
+    }
+  }
+  [class^="glyphmap"] {
+    @include grayscale(1);
+  }
+}
+
+#datos {
+  background-color: $gray-f8;
+  padding: 10px 10px 40px;
+
+  h2 {
+    font-size: $font-size-h4;
+  }
+  button.pull-right {
+    border: 0;
+    background: transparent;
+    padding: 15px 0;
+    @include grayscale(1);
+    color: $gray;
+  }
+
+  .form-group {
+
+    label {
+      font-size: $font-size-small;
+      font-weight: 600;
+      line-height: 0px;
+    }
+    .form-control-static {
+      padding: 0;
+      font-size: $font-size-medium-small;
+      font-weight: 100;
+      min-height: 0;
+      margin-bottom: 12px;
+    }
+    .form-control-gray { display: none; }
+
+    .checkbox-awesome {
+      label {
+        font-weight: 100;
+        font-size: $font-size-medium;
+        line-height: 30px;
+      }
+    }
+  }
+  #captcha {
+    width: 400px;
+    height: 200px;
+    background: $gray-light;
+    border: 1px solid $gray;
+    margin: 0 auto;
+    margin-bottom: 50px;
+
+    h2 {
+      font-size: $font-size-h1;
+      line-height: 70px;
+      padding: 10px 0;
+    }
+  }
+}
+
+#felicidades {
+  background-color: $gray-f8;
+  padding: 40px 0;
+
+  h1, p { color: white; }
+  .panel-title {
+
+    h1 {
+      font-size: $font-size-h1-large;
+      line-height: 50px;
+    }
+    p { font-size: $font-size-medium-small; }
+
+    h2 {
+      font-size: $font-size-h1-xlarge;
+      font-weight: 600;
+      margin: 20px auto;
+      padding: 25px;
+      background: white;
+      border-radius: 10px;
+    }
+  }
+  .panel-body {
+    h4 {
+      color: $azul3;
+      font-weight: 600;
+      margin: 20px;
+    }
+    p {
+      color: $gray;
+      margin: 30px;
+    }
+  }
+}
+
+.has-error {
+  > .checkbox-awesome {
+    > label {
+      &:before { border: red 1px solid}
+    }
+  }
+}

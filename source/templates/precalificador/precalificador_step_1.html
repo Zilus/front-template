@@ -1,0 +1,65 @@
+{% extends "includes/base.html" %}
+
+{% set title = 'BBVA Bancomer' %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+
+{%
+  set document = {
+    "header_img": "header_c.jpg",
+    "footer_img": "footer_c.jpg"
+  }
+%}
+
+{% include "includes/header.html" %}
+
+<div class="gray" id="main" role="main">
+  <header>
+    <div class="container">
+      <ul id="progressbar">
+        <li class="active">
+          <span class="glyphmap64-persona-circulo"></span>
+          <br />
+          1. Datos personales
+        </li>
+        <li>
+          <div>
+            <span class="glyphmap64-historial-circulo"></span>
+            <br />
+            2. Historial Crediticio
+          </div>
+        </li>
+        <li>
+          <span class="glyphmap64-domicilio-circulo"></span>
+          <br />
+          3. Domicilio Actual
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="container" id="precalificador">
+    <div class="panel panel-shadow">
+      <div class="panel-body">
+        <form class="form1" id="intro" action="precalificador_step_2.html" role="form" method="post" data-toggle="validator">
+          <fieldset>
+            {% include "includes/form1.html" %}
+          </fieldset>
+
+          <fieldset>
+            {% include "includes/form2.html" %}
+          </fieldset>
+
+          <fieldset>
+            {% include "includes/form3.html" %}
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+{% include "includes/footer.html" %}
+
+{% endblock %}

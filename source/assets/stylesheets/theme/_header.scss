@@ -1,0 +1,17 @@
+/*
+ * BBVA Bancomer
+ * Copyright 2016-present The Cocktail América S.A. de C.V.
+ *
+ * Header
+ *
+ */
+ header#main-header {
+   padding: 32px 0;
+   position: relative;
+
+   img.logo {
+    left: 15px;
+    position: absolute;
+    top: -32px;
+   }
+ }

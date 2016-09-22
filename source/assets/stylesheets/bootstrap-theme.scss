@@ -1,0 +1,31 @@
+/*
+ * BBVA Bancomer
+ * Copyright 2016-present The Cocktail América S.A. de C.V.
+ */
+
+// Core variables and mixins
+@import 'theme/variables';
+@import '../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables';
+@import '../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins';
+@import 'theme/mixins';
+
+// Awesome Checkboxes
+@import 'theme/awesome-bootstrap-checkbox';
+
+// Core CSS
+@import 'theme/glyphmap';
+@import 'theme/breadcrumbs';
+@import 'theme/type';
+@import 'theme/buttons';
+@import 'theme/panels';
+@import 'theme/forms';
+@import 'theme/tooltip';
+
+// Slider CSS
+@import 'theme/slider';
+
+// Custom CSS
+@import 'theme/animated';
+@import 'theme/header';
+@import 'theme/nav';
+@import 'theme/footer';

@@ -1,0 +1,22 @@
+/*
+ * BBVA Bancomer
+ * Copyright 2016-present The Cocktail América S.A. de C.V.
+ *
+ * Footer
+ *
+ */
+ footer#main-footer {
+   background-color: #00285b;
+   color: #fff;
+   font-size: 11px;
+   line-height: 32px;
+   padding: 24px 0;
+
+   &.footer-white {
+     background-color: #fff;
+   }
+
+   a {
+     color: #fff;
+   }
+ }

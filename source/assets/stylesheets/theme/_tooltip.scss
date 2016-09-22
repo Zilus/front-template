@@ -1,0 +1,78 @@
+//
+// Tooltips
+// --------------------------------------------------
+
+// Wrapper for the tooltip content
+.tooltip-inner {
+  padding: 15px 10px;
+  color: $gray;
+  background-color: $gray-light;
+  @include box-shadow(0 1px 1px 0px RGBA(129,129,129,0.5));
+}
+
+.has-error {
+  input {
+    & + .tooltip {
+      &.top .tooltip-arrow {
+        border-top-color: $brand-danger;
+      }
+      &.top-left .tooltip-arrow {
+        border-top-color: $brand-danger;
+      }
+      &.top-right .tooltip-arrow {
+        border-top-color: $brand-danger;
+      }
+      &.right .tooltip-arrow {
+        border-right-color: $brand-danger;
+      }
+      &.left .tooltip-arrow {
+        border-left-color: $brand-danger;
+      }
+      &.bottom .tooltip-arrow {
+        border-bottom-color: $brand-danger;
+      }
+      &.bottom-left .tooltip-arrow {
+        border-bottom-color: $brand-danger;
+      }
+      &.bottom-right .tooltip-arrow {
+        border-bottom-color: $brand-danger;
+      }
+
+      .tooltip-inner {
+        color: white;
+        background-color: $brand-danger;
+      }
+
+    }
+  }
+
+}
+
+.tooltip {
+  &.in     { @include opacity($tooltip-opacity); }
+
+  &.top .tooltip-arrow {
+    border-top-color: $gray-light;
+  }
+  &.top-left .tooltip-arrow {
+    border-top-color: $gray-light;
+  }
+  &.top-right .tooltip-arrow {
+    border-top-color: $gray-light;
+  }
+  &.right .tooltip-arrow {
+    border-right-color: $gray-light;
+  }
+  &.left .tooltip-arrow {
+    border-left-color: $gray-light;
+  }
+  &.bottom .tooltip-arrow {
+    border-bottom-color: $gray-light;
+  }
+  &.bottom-left .tooltip-arrow {
+    border-bottom-color: $gray-light;
+  }
+  &.bottom-right .tooltip-arrow {
+    border-bottom-color: $gray-light;
+  }
+}

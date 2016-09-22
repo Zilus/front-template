@@ -1,0 +1,40 @@
+{% extends "includes/base.html" %}
+
+{% set title = 'BBVA Bancomer' %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+
+{%
+  set document = {
+    "header_img": "header_c.jpg",
+    "footer_img": "footer_c.jpg"
+  }
+%}
+
+{% include "includes/header.html" %}
+
+<div class="gray" id="main" role="main">
+  <section class="container">
+    <div class="panel panel-shadow">
+      <div class="panel-body">
+        <form id="intro" method="post" action="precalificador_step_1.html" data-toggle="validator" role="form">
+          <div class="text-center">
+            <h1 class="titulo-con-padding">Te informamos que necesitamos más datos para realizar tu precalificación por favor acude a la sucursal más cercana</h1>
+            <span class="glyphmap-info"></span>
+          </div>
+          <div class="row">
+            <div class="col-xs-4 col-xs-offset-4 text-center div-con-margin-abajo">
+              <br />
+              <a href="precalificador_step_4.html" class="btn btn-primary btn-block btn-xlg">¿Dudas? Llámanos al 5530-4600</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+{% include "includes/footer.html" %}
+
+{% endblock %}

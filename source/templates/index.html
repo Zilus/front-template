@@ -1,0 +1,68 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <meta name="description" content="BBVA Bancomer" />
+    <meta name="author" content="BBVA Bancomer" />
+
+    <title>{% block title %}BBVA Bancomer{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <link rel="stylesheet" href="cotizador/css/style.min.css" />
+
+    <!--[if lt IE 9]>
+      <script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" href="/favicon.ico" />
+  </head>
+
+  <body>
+
+    {% set proyectos =
+        [
+          { url: "cotizador/index.html", title: "Cotizador", desc: "Cotizador hipotecario", fecha: "Ago 2016" },
+          { url: "precalificador/index.html", title: "Precalificador", desc: "Precalificador hipotecario", fecha: "Ago 2016" }
+        ]
+    %}
+
+    <div id="main" role="main">
+      <section id="header">
+          <div class="container">
+            <h1>T.O.C.</h1>
+            <div class="row row-block">
+              {% for proyecto in proyectos %}
+              <div class="col-sm-4 col-xs-12">
+                <div class="panel panel-default panel-solid panel-shadow">
+                  <div class="panel-body text-center">
+                    <h2 class="text-primary">
+                      <a href="{{ proyecto.url }}">{{loop.index}}. {{ proyecto.title }}</a>
+                    </h2>
+                    <p class="text-muted">
+                      {{ proyecto.desc }}
+                      <br />
+                      Fecha desarrollo:
+                      <br />
+                      <strong><i>{{ proyecto.fecha }}</i></strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+      </section>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "bootstrap-sass": "~3.3.7",
+    "tck-bootstrap": "the-cocktail-america/tck-bootstrap",
+    "owl.carousel": "~2.1.6",
+    "jquery.easing": "~1.3",
+    "bootstrap-validator": "~0.11.5"
+  },
+  "description": "BBVA Bancomer",
+  "homepage": "https://github.com/the-cocktail-america/bbva-bancomer",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "license": "MIT",
+  "name": "bbva_bancomer",
+  "private": true,
+  "version": "0.0.1"
+}
