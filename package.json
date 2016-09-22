@@ -1,19 +1,19 @@
 {
-  "name": "bbva-bancomer",
-  "officialName": "BBVA Bancomer",
-  "version": "0.0.1",
-  "summary": "Foo",
-  "description": "Bootstrap theme and front for BBVA Bancomer",
+  "name": "font-tenplate",
+  "officialName": "Gulp frontend template",
+  "version": "0.0.2",
+  "summary": "Frontend dev with gulp. Multiple projects capable",
+  "description": "Frontend dev with gulp. Multiple projects capable",
   "author": {
-    "name": "The Cocktail América",
-    "email": "desarrollo.america@the-cocktail.com"
+    "name": "Oscar Azpeitia",
+    "email": "me@thezilus.com"
   },
-  "homepage": "https://github.com/the-cocktail-america/bbva-bancomer",
+  "homepage": "hhttps://github.com/Zilus/front-template",
   "license": "MIT",
   "main": "gulpfile.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/the-cocktail-america/bbva-bancomer.git"
+    "url": "https://github.com/Zilus/front-template.git"
   },
   "scripts": {
     "test": ""
