@@ -77,5 +77,6 @@ gulp.task('shell', function() {
  */
 gulp.task('ftp', function() {
   return gulp.src(config.projects[global.project].deploydir, { base: ftpbase, buffer: false })
-    .pipe(gulpFTP.dest(config.deploy.remoteFTP));
+    .pipe(gulpFTP.newer(config.deploy.remoteFTP))
+    .pipe(gulpFTP.dest(config.deploy.remoteFTP))
 });
