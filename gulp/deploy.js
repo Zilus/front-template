@@ -42,10 +42,10 @@ var gulpFTP = ftp.create({
 var countProjects = Object.keys(config.projects).length
 if(countProjects>1) {
   var sshdest = config.deploy.remoteTmp + '/' + global.project
-  var ftpbase = 'dist/'
+  var ftpbase = 'dist/'+global.project
 } else {
   var sshdest = config.deploy.remoteTmp
-  var ftpbase = 'dist/'+global.project
+  var ftpbase = 'dist/'
 }
 
 /**
