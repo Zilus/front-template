@@ -1,0 +1,7 @@
+bower_components/**/*
+node_modules/**/*
+source/assets/javascripts/bootstrap-slider.js
+source/assets/javascripts/validator.js
+source/assets/javascripts/responsive.js
+source/assets/javascripts/picturefill.js
+source/assets/javascripts/owl.carousel.js
