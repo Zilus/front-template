@@ -19,8 +19,8 @@ gulp.task('fonts', ['clean-fonts'], function() {
 /**
  * Clean fonts
  */
-gulp.task('clean-fonts', function(callback) {
-    del(config.projects[global.project].build + 'fonts/', callback);
+gulp.task('clean-fonts', function() {
+    del(config.projects[global.project].build + 'fonts/');
 });
 
 /**
