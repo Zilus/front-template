@@ -25,5 +25,6 @@ var gulp = require('gulp'),
  *  TCK Playground
  */
 gulp.task('tck', function() {
+  //.pipe(plugins.debug())
   console.log("TCK Test task");
 });

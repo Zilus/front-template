@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-01</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="FontIcons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-01" fill="#CCCCCC">
+            <path d="M293.89824,488.740444 L293.89824,275.536 L368.84992,275.536 L380.07296,192.444444 L293.89824,192.444444 L293.89824,139.395111 C293.89824,115.336889 300.89728,98.9493333 337.01888,98.9493333 L383.104,98.9248889 L383.104,24.6137778 C375.13728,23.6017778 347.78112,21.3333333 315.96032,21.3333333 C249.5232,21.3333333 204.04224,60.0582222 204.04224,131.172 L204.04224,192.444444 L128.896,192.444444 L128.896,275.536 L204.04224,275.536 L204.04224,488.740444 L293.89824,488.740444 Z" id="icon-fb"></path>
+        </g>
+    </g>
+</svg>
