@@ -15,6 +15,7 @@ var runTimestamp = Math.round(Date.now()/1000);
  */
 gulp.task('fonts', ['clean-fonts'], function() {
   gulp.start('generate-fonts');
+  gulp.start('generate-iconfonts');
 });
 
 /**

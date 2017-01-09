@@ -7,6 +7,7 @@ var gulp = require('gulp'),
         lazy: false
     }),
     config = require('./config/config.json');
+var browserSync = require('browser-sync').create();    
 
 //Default proyect
 var countProjects = Object.keys(config.projects).length
