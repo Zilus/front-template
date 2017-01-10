@@ -7,12 +7,12 @@ var gulp = require('gulp'),
         lazy: false
     }),
     config = require('./config/config.json');
-var browserSync = require('browser-sync').create();    
+var browserSync = require('browser-sync').create();
 
 //Default proyect
 var countProjects = Object.keys(config.projects).length
 var uploadtask = "sftp"
-global.project = "cotizador"
+global.project = "test"
 
  /**
   * Choose project menu
@@ -50,6 +50,7 @@ gulp.task('menu', function() {
     + '\t1) Build All\r\n'
     + '\t2) Force build all\r\n'
     + '\t3) Deploy\r\n'
+    + '\t4) Serve\r\n'
     + '\t9) Advanced menu\r\n'
     + '\t0) Exit\r\n '
     + '\tWhat you like to do?';
@@ -75,14 +76,17 @@ gulp.task('menu', function() {
             gulp.start('generate-images');
             gulp.start('fonts');
             break;
-            case '3':
-              if(config.deploy_method=="ftp") {
-                uploadtask="ftp"
-              } else {
-                uploadtask="sftp"
-              }
-              gulp.start(uploadtask);
-              break;
+          case '3':
+            if(config.deploy_method=="ftp") {
+              uploadtask="ftp"
+            } else {
+              uploadtask="sftp"
+            }
+            gulp.start(uploadtask);
+            break;
+          case '4':
+            gulp.start('serve');
+            break;
           case '9':
             gulp.start('advanced-menu');
             break;

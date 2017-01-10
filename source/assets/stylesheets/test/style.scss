@@ -1,0 +1,14 @@
+$bgcolor: #f1f1f1;
+
+body {
+  background: $bgcolor;
+}
+
+.jumbotron {
+    position: relative;
+    background: #000 url("../img/city.jpg") center center;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    overflow: hidden;
+}

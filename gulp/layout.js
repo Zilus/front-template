@@ -18,6 +18,7 @@ var gulp = require('gulp'),
       "lint": true,
       "lint_bootstrap": false || (config.hasOwnProperty("bootstrap") && config.bootstrap.hasOwnProperty("lint") && config.bootstrap.lint === true)
     };
+var browserSync = require('browser-sync').create();
 
 /**
  * Build layouts
@@ -79,5 +80,7 @@ gulp.task('generate-layouts', function() {
       })))
 
     .pipe(plugins.prettify({ indent_char: ' ', indent_size: 2 }))
-    .pipe(gulp.dest(config.projects[global.project].build));
+    .pipe(gulp.dest(config.projects[global.project].build))
+    .pipe(browserSync.stream())
+    browserSync.reload
 });

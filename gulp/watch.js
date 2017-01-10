@@ -2,9 +2,20 @@
 
 var gulp = require('gulp'),
     config = require('./config/config.json');
+var browserSync = require('browser-sync').create();
 
-gulp.task('watch', function() {
-  gulp.watch(config.path.tmpl, ['layout']);
-  gulp.watch(config.path.data, ['layout']);
-  gulp.watch(config.path.scss, ['sass']);
+/**
+ * BrowserSync
+ */
+gulp.task('serve', function() {
+
+    browserSync.init({
+        server: "./dist"
+    });
+
+    gulp.watch(config.projects[global.project].css, ['generate-styles']);
+    gulp.watch(config.projects[global.project].html, ['generate-layouts']);
+    gulp.watch(config.projects[global.project].js, ['generate-scripts']);
+    
+    gulp.watch("./dist/**/*").on('change', browserSync.reload);
 });

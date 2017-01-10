@@ -1,32 +1,31 @@
 {
   "projects": {
-    "cotizador": {
+    "test": {
       "js": [
         "./bower_components/tck-bootstrap/dist/js/scripts.js",
-        "./source/assets/javascripts/form.js",
-        "./source/assets/javascripts/project/**/*.js"
+        "./source/assets/javascripts/test/**/*.js"
       ],
       "css": [
-        "./source/assets/stylesheets/style.scss"
+        "./source/assets/stylesheets/test/style.scss"
       ],
       "cssignore": [
         "./bower_components/tck-bootstrap/dist/css/tck_bootstrap.css",
         "./source/assets/stylesheets/bootstrap-theme.scss"
       ],
       "html": [
-        "./source/templates/project/*.html"
+        "./source/templates/test/*.html"
       ],
       "img": [
-        "./source/assets/images/common/**/*.{jpg,png,gif,jpeg}",
-        "./source/assets/images/project/**/*"
+        "./source/assets/images/common/**/*.{jpg,png,gif,jpeg,svg}",
+        "./source/assets/images/test/**/*"
       ],
       "fonts": [
-        "./source/assets/fonts/project/**/*"
+        "./source/assets/fonts/test/**/*"
       ],
-      "icons":     "./source/assets/icons/project/**/*.svg",
+      "icons":     "./source/assets/icons/test/**/*.svg",
       "data":      "./data/example.json",
-      "build":     "./dist/project/",
-      "deploydir":     "./dist/project/**/*"
+      "build":     "./dist/test/",
+      "deploydir":     "./dist/test/**/*"
     }
   },
   "deploy_method_options": "ftp, sftp",

@@ -8,6 +8,7 @@ var gulp = require('gulp'),
         lazy: false
     }),
     config = require('./config/config.json');
+var browserSync = require('browser-sync').create();
 
 /**
  * Copy images
@@ -30,5 +31,7 @@ gulp.task('generate-images', function(){
   gulp.src(config.projects[global.project].img)
     .pipe(plugins.plumber())
     .pipe(plugins.imagemin())
-    .pipe(gulp.dest(config.projects[global.project].build + 'img/'));
+    .pipe(gulp.dest(config.projects[global.project].build + 'img/'))
+    .pipe(browserSync.stream())
+    browserSync.reload
 });

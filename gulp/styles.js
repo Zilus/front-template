@@ -14,6 +14,7 @@ var gulp = require('gulp'),
     options = {
       "lint": true,
     };
+var browserSync = require('browser-sync').create();
 
 /**
  * Build styles
@@ -59,5 +60,6 @@ gulp.task('generate-styles', function() {
     .pipe(plugins.cssnano({zindex: false}))
     .pipe(plugins.rename({ extname: '.min.css' }))
     .pipe(plugins.sourcemaps.write('.'))
-    .pipe(gulp.dest(config.projects[global.project].build + 'css'));
+    .pipe(gulp.dest(config.projects[global.project].build + 'css'))
+    .pipe(browserSync.stream());
 });
