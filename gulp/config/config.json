@@ -16,8 +16,8 @@
         "./source/templates/test/*.html"
       ],
       "img": [
-        "./source/assets/images/common/**/*.{jpg,png,gif,jpeg,svg}",
-        "./source/assets/images/test/**/*"
+        "source/assets/images/common/**/*.{jpg,png,gif,jpeg,svg}",
+        "source/assets/images/test/**/*"
       ],
       "fonts": [
         "./source/assets/fonts/test/**/*"
@@ -31,7 +31,7 @@
   "deploy_method_options": "ftp, sftp",
   "deploy_method": "ftp",
   "deploy": {
-    "local":     "./dist/**/*",
+    "local":     "dist/**/*",
     "remote": "/home/user/public_html/project/",
     "remoteTmp": "/tmp/DFe4siED2D",
     "remoteScript": "/home/user/",

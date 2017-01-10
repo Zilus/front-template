@@ -81,6 +81,5 @@ gulp.task('generate-layouts', function() {
 
     .pipe(plugins.prettify({ indent_char: ' ', indent_size: 2 }))
     .pipe(gulp.dest(config.projects[global.project].build))
-    .pipe(browserSync.stream())
-    browserSync.reload
+    .pipe(browserSync.stream());
 });

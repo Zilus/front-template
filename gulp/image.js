@@ -32,6 +32,5 @@ gulp.task('generate-images', function(){
     .pipe(plugins.plumber())
     .pipe(plugins.imagemin())
     .pipe(gulp.dest(config.projects[global.project].build + 'img/'))
-    .pipe(browserSync.stream())
-    browserSync.reload
+    .pipe(browserSync.stream());
 });
