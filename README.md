@@ -6,4 +6,5 @@ Multiple projects capable.
 2. NPM install --dev
 3. sudo npm install -g phantomjs@1.9
 4. Edit gulp > config > config.json
+5. Create the empty file if not exist: $ touch /Users/user/.ssh/id_rsa
 5. run Gulp
