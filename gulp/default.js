@@ -70,23 +70,11 @@ gulp.task('menu', function() {
         switch (res.type) {
           case '1':
             gulp.start('clean-dist');
-            gulp.start('generate-layouts');
-            gulp.start('generate-styles');
-            gulp.start('generate-scripts');
-            gulp.start('generate-images');
-            gulp.start('generate-fonts');
-            gulp.start('generate-iconfonts');
-            gulp.start('dependencies');
+            gulp.start('build');
             gulp.start('watch');
             break;
           case '2':
-            gulp.start('generate-layouts');
-            gulp.start('generate-styles');
-            gulp.start('generate-scripts');
-            gulp.start('generate-images');
-            gulp.start('generate-fonts');
-            gulp.start('generate-iconfonts');
-            gulp.start('dependencies');
+            gulp.start('build');
             if(config.deploy_method=="ftp") {
               uploadtask="ftp"
             } else {
@@ -96,13 +84,7 @@ gulp.task('menu', function() {
             gulp.start('screens');
             break;
           case '3':
-            gulp.start('generate-layouts');
-            gulp.start('generate-styles');
-            gulp.start('generate-scripts');
-            gulp.start('generate-images');
-            gulp.start('generate-fonts');
-            gulp.start('generate-iconfonts');
-            gulp.start('dependencies');
+            gulp.start('build');
             gulp.start('screens');
             gulp.start('compress');
             break;
@@ -113,19 +95,13 @@ gulp.task('menu', function() {
             gulp.start('watch');
             break;
           case '6':
-            gulp.start('generate-layouts');
-            gulp.start('generate-styles');
-            gulp.start('generate-scripts');
-            gulp.start('generate-images');
-            gulp.start('generate-fonts');
-            gulp.start('generate-iconfonts');
-            gulp.start('dependencies');
+            gulp.start('build');
             break;
           case '7':
-            gulp.start('dependencies');
+            gulp.start('force-build');
             break;
           case '8':
-            gulp.start('generate-screens');
+            gulp.start('screens');
             break;
           case '9':
             gulp.start('advanced-menu');
@@ -214,4 +190,30 @@ gulp.task('advanced-menu', function() {
  */
 gulp.task('clean-dist', function() {
     del(config.projects[global.project].build);
+});
+
+/**
+ * Build
+ */
+gulp.task('build', function() {
+  gulp.start('generate-layouts');
+  gulp.start('generate-styles');
+  gulp.start('generate-scripts');
+  gulp.start('generate-images');
+  gulp.start('generate-fonts');
+  gulp.start('generate-iconfonts');
+  gulp.start('dependencies');
+});
+
+/**
+ * Force build
+ */
+gulp.task('force-build', function() {
+  gulp.start('layouts-force');
+  gulp.start('styles-force');
+  gulp.start('scripts-force');
+  gulp.start('generate-images');
+  gulp.start('generate-fonts');
+  gulp.start('generate-iconfonts');
+  gulp.start('dependencies');
 });
