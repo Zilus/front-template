@@ -38,7 +38,6 @@ gulp.task('generate-fonts', function(){
  * Generate ICOMoon Fonts
  */
 gulp.task('generate-iconfonts', function() {
-  console.log(config.projects[global.project].icons);
   return gulp.src([config.projects[global.project].icons])
     .pipe(plugins.debug())
     .pipe(plugins.iconfont({

@@ -5,12 +5,20 @@
         "./bower_components/tck-bootstrap/dist/js/scripts.js",
         "./source/assets/javascripts/test/**/*.js"
       ],
+      "jsDeps": [
+        "bower_components/owl.carousel/dist/owl.carousel.min.js",
+        "bower_components/sticky-kit/jquery.sticky-kit.min.js"
+      ],
       "css": [
         "./source/assets/stylesheets/test/style.scss"
       ],
-      "cssignore": [
+      "cssIgnore": [
         "./bower_components/tck-bootstrap/dist/css/tck_bootstrap.css",
         "./source/assets/stylesheets/bootstrap-theme.scss"
+      ],
+      "cssDeps": [
+        "bower_components/owl.carousel/dist/assets/owl.carousel.min.css",
+        "bower_components/owl.carousel/dist/assets/owl.theme.default.min.css"
       ],
       "html": [
         "./source/templates/test/*.html"
@@ -25,6 +33,9 @@
       "icons":     "./source/assets/icons/test/**/*.svg",
       "data":      "./data/example.json",
       "build":     "./dist/test/",
+      "zipFilename": "test",
+      "screenSizes": [320, 375, 425, 768, 1024],
+      "screenDir":     "./screens/test/",
       "deploydir":     "./dist/test/**/*"
     }
   },

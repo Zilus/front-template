@@ -48,7 +48,7 @@ gulp.task('generate-styles', function() {
     })))
     .pipe(gulpif(options.lint, plugins.sassLint.format()))
     .pipe(gulpif(options.lint, plugins.sassLint.failOnError()))
-    .pipe(plugins.addSrc.prepend(config.projects[global.project].cssignore))
+    .pipe(plugins.addSrc.prepend(config.projects[global.project].cssIgnore))
     .pipe(plugins.sourcemaps.init())
     .pipe(plugins.sass({outputStyle: 'expanded'})).on('error', plugins.sass.logError)
     .pipe(plugins.autoprefixer({

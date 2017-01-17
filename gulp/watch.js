@@ -17,9 +17,9 @@ var browserSync = require('browser-sync').create();
 var reload      = browserSync.reload;
 
 /**
- * BrowserSync
+ * Watch
  */
-gulp.task('serve', function() {
+gulp.task('watch', function() {
     browserSync.init({
         injectChanges: true,
         notify: false,
@@ -36,4 +36,15 @@ gulp.task('serve', function() {
       .pipe(browserSync.stream());
 
     browserSync.watch( "dist/**/*" ).on('change', reload);
+});
+
+/**
+ * Serve
+ */
+gulp.task('serve', function() {
+    browserSync.init({
+        injectChanges: true,
+        notify: false,
+        server: "./dist"
+    });
 });

@@ -27,4 +27,5 @@ var gulp = require('gulp'),
 gulp.task('tck', function() {
   //.pipe(plugins.debug())
   console.log("TCK Test task");
+  console.log(config.projects[global.project].build + '**/*.html');
 });

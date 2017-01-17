@@ -1,6 +1,8 @@
 'use strict';
 
 var gulp = require('gulp'),
+    del = require('del'),
+    runSequence = require('run-sequence'),
     plugins = require('gulp-load-plugins')({
         pattern: ['gulp-*', 'gulp.*'],
         replaceString: /^gulp(-|\.)/,
@@ -45,12 +47,17 @@ gulp.task('default', function() {
  * menu
  */
 gulp.task('menu', function() {
+  gulp.start('clean-dist');
   var menu =
       'Proyecto '+global.project+'\r\n'
-    + '\t1) Build All\r\n'
-    + '\t2) Force build all\r\n'
-    + '\t3) Deploy\r\n'
-    + '\t4) Serve\r\n'
+    + '\t1) Develop\r\n'
+    + '\t2) Deploy\r\n'
+    + '\t3) Distribute\r\n'
+    + '\t4) Watch\r\n'
+    + '\t5) Serve\r\n'
+    + '\t6) Build\r\n'
+    + '\t7) Force build\r\n'
+    + '\t8) Test\r\n'
     + '\t9) Advanced menu\r\n'
     + '\t0) Exit\r\n '
     + '\tWhat you like to do?';
@@ -63,29 +70,56 @@ gulp.task('menu', function() {
     }, function(res){
         switch (res.type) {
           case '1':
-            gulp.start('layouts');
-            gulp.start('styles');
-            gulp.start('scripts');
+            gulp.start('generate-layouts');
+            gulp.start('generate-styles');
+            gulp.start('generate-scripts');
             gulp.start('generate-images');
-            gulp.start('fonts');
+            gulp.start('generate-fonts');
+            gulp.start('generate-iconfonts');
+            gulp.start('dependencies');
+            gulp.start('watch');
             break;
           case '2':
-            gulp.start('layouts-force');
+            gulp.start('generate-layouts');
             gulp.start('styles-force');
-            gulp.start('scripts-force');
+            gulp.start('generate-scripts');
             gulp.start('generate-images');
-            gulp.start('fonts');
-            break;
-          case '3':
+            gulp.start('generate-fonts');
+            gulp.start('generate-iconfonts');
+            gulp.start('dependencies');
             if(config.deploy_method=="ftp") {
               uploadtask="ftp"
             } else {
               uploadtask="sftp"
             }
             gulp.start(uploadtask);
+            gulp.start('screens');
+            break;
+          case '3':
+            gulp.start('generate-layouts');
+            gulp.start('generate-styles');
+            gulp.start('generate-scripts');
+            gulp.start('generate-images');
+            gulp.start('generate-fonts');
+            gulp.start('generate-iconfonts');
+            gulp.start('dependencies');
+            gulp.start('screens');
+            gulp.start('compress');
             break;
           case '4':
             gulp.start('serve');
+            break;
+          case '5':
+            gulp.start('watch');
+            break;
+          case '6':
+            gulp.start('compress');
+            break;
+          case '7':
+            gulp.start('dependencies');
+            break;
+          case '8':
+            gulp.start('generate-screens');
             break;
           case '9':
             gulp.start('advanced-menu');
@@ -108,8 +142,11 @@ gulp.task('advanced-menu', function() {
     + '\t32) Build layout force\r\n '
     + '\t41) Generate images\r\n '
     + '\t51) Generate fonts\r\n '
-    //+ '\t61) Generate docs \r\n '
-    //+ '\t71) Generate screenshots \r\n '
+    + '\t61) Deploy FTP\r\n '
+    + '\t61) Deploy SFTP\r\n '
+    + '\t71) Dependencies\r\n '
+    + '\t81) Compress\r\n '
+    + '\t91) Test\r\n '
     + '\t0) Return\r\n '
     + '\tWhat you like to do?';
 
@@ -144,9 +181,31 @@ gulp.task('advanced-menu', function() {
         case '51':
           gulp.start('fonts');
           break;
+        case '61':
+          gulp.start('ftp');
+          break;
+        case '62':
+          gulp.start('sftp');
+          break;
+        case '71':
+          gulp.start('dependencies');
+          break;
+        case '81':
+          gulp.start('compress');
+          break;
+        case '91':
+          gulp.start('screens');
+          break;
         case '0':
           gulp.start('menu');
           break;
       }
     }));
+});
+
+/**
+ * Clean dist
+ */
+gulp.task('clean-dist', function() {
+    del(config.projects[global.project].build);
 });
