@@ -47,7 +47,6 @@ gulp.task('default', function() {
  * menu
  */
 gulp.task('menu', function() {
-  gulp.start('clean-dist');
   var menu =
       'Proyecto '+global.project+'\r\n'
     + '\t1) Develop\r\n'
@@ -70,6 +69,7 @@ gulp.task('menu', function() {
     }, function(res){
         switch (res.type) {
           case '1':
+            gulp.start('clean-dist');
             gulp.start('generate-layouts');
             gulp.start('generate-styles');
             gulp.start('generate-scripts');
@@ -81,7 +81,7 @@ gulp.task('menu', function() {
             break;
           case '2':
             gulp.start('generate-layouts');
-            gulp.start('styles-force');
+            gulp.start('generate-styles');
             gulp.start('generate-scripts');
             gulp.start('generate-images');
             gulp.start('generate-fonts');
@@ -113,7 +113,13 @@ gulp.task('menu', function() {
             gulp.start('watch');
             break;
           case '6':
-            gulp.start('compress');
+            gulp.start('generate-layouts');
+            gulp.start('generate-styles');
+            gulp.start('generate-scripts');
+            gulp.start('generate-images');
+            gulp.start('generate-fonts');
+            gulp.start('generate-iconfonts');
+            gulp.start('dependencies');
             break;
           case '7':
             gulp.start('dependencies');
