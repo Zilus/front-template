@@ -75,11 +75,7 @@ gulp.task('menu', function() {
             break;
           case '2':
             gulp.start('build');
-            if(config.deploy_method=="ftp") {
-              uploadtask="ftp"
-            } else {
-              uploadtask="sftp"
-            }
+            uploadtask = (config.deploy_method=="ftp") ? 'ftp' : 'sftp' ;
             gulp.start(uploadtask);
             gulp.start('screens');
             break;
